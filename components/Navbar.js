@@ -41,25 +41,25 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, clearCart, subT
   return (
     <>
       {!sidebar && <span onMouseOver={() => {
-          setDropdown(true)
-        }} onMouseLeave={() => {
-          setDropdown(false)
-        }} className='fixed right-9 top-4 z-30 cursor-pointer'>
-        {dropdown && <div  className="absolute right-5 z-30 bg-white border shadow-lg top-5 rounded-md px-5 w-32 py-4">
+        setDropdown(true)
+      }} onMouseLeave={() => {
+        setDropdown(false)
+      }} className='fixed right-9 top-4 z-30 cursor-pointer'>
+        {dropdown && <div className="absolute right-5 z-30 bg-white border shadow-lg top-5 rounded-md px-5 w-32 py-4">
           <ul>
             <Link href={'/myaccount'}><li className='py-1 text-sm  font-bold hover:text-pink-700' >My Account</li></Link>
             <Link href={'/orders'}><li className='py-1 text-sm  font-bold hover:text-pink-700' >My Orders</li></Link>
             <li onClick={logout} className='py-1 text-sm font-bold  hover:text-pink-700' >Logout</li>
           </ul>
         </div>}
-          {user.value && <RiAccountCircleFill className='text-xl md:text-2xl mx-2' />}
+        {user.value && <RiAccountCircleFill className='text-xl md:text-2xl mx-2' />}
 
       </span>}
       <div className={`flex flex-col md:flex-row md:justify-start justify-center items-center py-2 shadow-xl sticky top-0 z-10 bg-white ${!sidebar && 'overflow-hidden'}`}>
-        <div className="logo mr-auto md:mx-5">
-        <Link href={'/'} > <Image width={200} height={40} src="/logo.png" alt="" />
-        </Link>
-      </div>
+        <div className="logo hidden md:block mr-auto md:mx-5">
+          <Link href={'/'} > <Image width={200} height={40} src="/logo.png" alt="" />
+          </Link>
+        </div>
         <div className="nav">
           <ul className="flex items-center space-x-5 font-bold md:text-md">
             <Link href={'/tshirts'}><li>Tshirts</li></Link>
